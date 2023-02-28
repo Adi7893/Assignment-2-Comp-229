@@ -1,0 +1,46 @@
+<!--Name: Adityasinh Makwana-->
+<!--Sudent id: 301175966-->
+<!--COMP229_002-->
+<!--Date 09 Feb 2023-->
+
+<%-include partials/header.ejs%>
+  <!--main nav navigation-->
+  <%-include partials/main_nav.ejs%>
+  <main class="container">
+    <div class="jumbotron">
+      <h1 class="display-4"> <%= title %>  </h1><br><br>
+
+      <form class="row g-3">
+        <div class="row g-3">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Message</label>
+          <input type="text" class="form-control" id="inputMessage" >
+        </div>
+       
+        <div class="col-12">
+          <button onclick="window.location.href='/' "type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+
+    </div>
+</main>
+
+
+<%-include partials/bottom_nav.ejs%>
+
+<!--<h1><%= title %></h1>--> 
+<!--<p>Welcome to <%= title %></p>-->
+<!--script section-->
+<%-include partials/footer.ejs%> 

@@ -1,0 +1,52 @@
+<%-include ../partials/header.ejs%>
+<%-include ../partials/main_nav.ejs%>
+<!--Content for the Add Page-->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+        <h1><%=title%></h1>
+            <form class="form" method="POST">
+                <div class="form group">
+                    <label for="ContactNameTextField">Contact Name</label>
+                    <input type="text" class="form control"
+                    id="ContactNameTextField"
+                    placeholder = "Enter the Contact Name"
+                    name="Contact Name" 
+                    value="<%=contact.ContactName%>"
+                    required>
+                    </div>
+
+                    <div class="form group">
+                    <label for="ContactNumberTextField">Contact Number</label>
+                    <input type="number" class="form control"
+                    id="ContcatNumberTextField"
+                    placeholder = "Enter the Contat Number"
+                    name="Contact Number"
+                    value="<%=contact.ContactNumber%>"
+                    required>
+                    </div>
+                    
+                    <div class="form group">
+                    <label for="ContactEmailTextField">Contact Email</label>
+                    <input type="text" class="form control"
+                    id="ContactEmailTextField"
+                    placeholder = "Enter the Contcat Email"
+                    name="Contact Email" 
+                    value="<%=contact.ContactEmail%>"
+                    required>
+                    </div>
+                    <button class="btn btn-primary" type="submit"><i class="fas fa-edit"></i>submit</button>
+                    <a href="/contactList" class="btn btn-warning"><i class="fas fa-undo"></i>cancel</a>
+
+                    
+
+
+                </form>
+           </div>
+        </div>
+    </div>
+
+
+
+ <%-include ../partials/bottom_nav.ejs%>
+ <%-include ../partials/footer.ejs%>
