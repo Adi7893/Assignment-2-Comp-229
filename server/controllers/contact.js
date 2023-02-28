@@ -4,27 +4,27 @@ let mongoose = require('mongoose');
 //create a reference to the db Schema which is the model
 let contact = require('../models/contact');
 
-//we want to display the bookList
+//we want to display the contactList
 module.exports.displaycontactList = (req, res, next) => {
     contact.find((err, contactList) => {
         if (err) {
             return console.error(err);
         }
         else {
-           //console.log(BookList);
-            res.render('contact/list', { title: 'Contact', contactList: contactList });
+           
+            res.render('contact/list', { title: 'Contact', contactList: contactList,displayName:req.user?req.user.displayName:'' });
         }
     });
 }
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('contact/add',{title:'Add contact'})
+    res.render('contact/add',{title:'Add contact',displayName:req.user?req.user.displayName:''})
 }
 
 module.exports.processAddPage = (req, res, next) => {
     let newcontact = contact({
-        "Contact Name": req.body.ContactName,
-        "Contact Number": req.body.ContactNumber,
-        "Contact Email": req.body.ContactEmail
+        "ContactName": req.body.ContactName,
+        "ContactNumber": req.body.ContactNumber,
+        "ContactEmail": req.body.ContactEmail
     });
     contact.create(newcontact, (err, contact) => {
         if (err) {
@@ -45,7 +45,7 @@ module.exports.displayEditPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            res.render('contact/edit', { title: 'Edit Contact', contact: contactToEdit });
+            res.render('contact/edit', { title: 'Edit Contact', contact: contactToEdit,displayName:req.user?req.user.displayName:''  });
         }
     });
 }
@@ -65,7 +65,7 @@ module.exports.processEditPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            //console.log(bookList);
+           
             res.redirect('/contactList');
         }
     });

@@ -17,34 +17,48 @@
                 <%}%>
             <a class="nav-link active" aria-current="page" href="/"><i class="fa-sharp fa-solid fa-house-chimney"></i>Home</a>
           </li>
-          <% if(title=="About"){%>
+          <% if(title=="About Me"){%>
           <li class="nav-item active">
             <%}else{%>
               <li class="nav-item">
                 <%}%>
             <a class="nav-link active" aria-current="page" href="/about"><i class="fa-solid fa-address-card"></i>About Me</a>
           </li> 
-          <% if(title=="Projects"){%>
+          <% if(title=="Projects page"){%>
           <li class="nav-item active">
             <%}else{%>
               <li class="nav-item">
                 <%}%>
             <a class="nav-link active" aria-current="page" href="/projects"><i class="fa-brands fa-product-hunt"></i>Projects page</a>
           </li>
-          <% if(title=="Services"){%>
+          <% if(title=="Services page"){%>
            <li class="nav-item active">
             <%}else{%>
               <li class="nav-item">
                 <%}%>
             <a class="nav-link active" aria-current="page" href="/services"><i class="fa-brands fa-servicestack"></i>Services page</a>
           </li>
-          <% if(title=="Contact"){%>
+          <% if(title=="Contact Me"){%>
           <li class="nav-item active">
             <%}else{%>
               <li class="nav-item">
                 <%}%>
             <a class="nav-link active" aria-current="page" href="/contact"><i class="fa-solid fa-address-book"></i>Contact Me</a>
           </li>
+          <% if(title=="contact"){%>
+            <li class="nav-item active">
+              <%}else{%>
+                <li class="nav-item">
+                  <%}%>
+              <a class="nav-link active" aria-current="page" href="/contactList"><i class="fa-solid fa-book"></i>Contacts</a>
+            </li>
+            <%if(typeof displayName =='string'&&displayName){%>
+              <li class="navbar-text"><i class="fas fa-lg fa-user"></i>Hello,<%=displayName%></li>
+              <li class ="nav-item"><a href="/logout" class="nav-link"><i class="fas fa-lg fa-sign-out-alt"></i>logout</a></li>
+              <%}
+              else {%>
+                <li class="nav-item"><a href="/login" class="nav-link"><i class="fas fa-lg fa-sign-in-alt"></i>Login</a></li>
+                <%}%>
       </div>
     <!--</div>-->
   </nav>
